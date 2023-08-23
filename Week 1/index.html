@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <title>Our First Webpage</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        /* div {
+                background: orange;
+                padding: 5px;
+            }
+            p {
+                background: green;
+            } */
+
+        span:hover {
+            text-decoration: line-through;
+            cursor: progress;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>Hi</li>
+                <li>Hello</li>
+                <li>Hey</li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article>
+        <h1 onclick="hi()">Our First Webpage</h1>
+        <p>Hi there, I'm a paragraph!</p>
+        <p>Hi, I'm a <a href="http://google.com">nested</a> paragraph <span>inside</span> a div</p>
+    </article>
+    </main>
+    <footer>
+        &copy; All <u>Rights</u> Reserved | CPTR-456 Class Fall 2023
+    </footer>
+    <script>
+        function hi() {
+            alert("You clicked me!")
+        }
+    </script>
+</body>
+</html>
