@@ -18,6 +18,10 @@
             text-decoration: line-through;
             cursor: progress;
         }
+
+        tfoot td {
+            font-weight: bold;
+        }
     </style>
 </head>
 
@@ -32,11 +36,47 @@
         </nav>
     </header>
     <main>
+        <progress value="50" max="100"></progress>
+        <form>
+            <input type="text">
+            <input type="password">
+            <input type="email">
+            <input onchange="getRange(this)" type="range" min="0" max="10" step="0.01">
+            <input type="color">
+            <input type="date">
+            <input type="datetime">
+            <input type="radio" name="gender" value="male"> Male
+            <input type="radio" name="gender" value="female"> Female
+            <input type="checkbox">A
+            <input type="checkbox">B
+
+            <button type="submit">Submit Form</button>
+        </form>
         <article>
-        <h1 onclick="hi()">Our First Webpage</h1>
-        <p>Hi there, I'm a paragraph!</p>
-        <p>Hi, I'm a <a href="http://google.com">nested</a> paragraph <span>inside</span> a div</p>
-    </article>
+            <h1 onclick="hi()">Our First Webpage</h1>
+            <p>Hi there, I'm a paragraph!</p>
+            <p>Hi, I'm a <a href="http://google.com">nested</a> paragraph <span>inside</span> a div</p>
+        </article>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Day of Week</th> <!-- more like <h1> tag -->
+                    <th>Activity</th>
+                    <th>Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Monday</td>
+                    <td colspan="2">Go to Gym</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3">Fig 1: Table Describing Daily Activities</td>
+                </tr>
+            </tfoot>
+        </table>
     </main>
     <footer>
         &copy; All <u>Rights</u> Reserved | CPTR-456 Class Fall 2023
@@ -45,6 +85,10 @@
         function hi() {
             alert("You clicked me!")
         }
+        function getRange(element) {
+            console.log(element.value)
+        }
     </script>
 </body>
+
 </html>
