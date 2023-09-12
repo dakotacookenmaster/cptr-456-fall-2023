@@ -1,0 +1,54 @@
+:root {
+    --site-gap: 10px;
+}
+
+/* GLOBAL RESET */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Main content */
+div {
+    width: 100px;
+    height: 100px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    padding: var(--site-gap);
+    gap: var(--site-gap);
+}
+
+#top, #bottom, #left, #right {
+    display: flex;
+    gap: var(--site-gap);
+}
+
+#left, #right {
+    flex-direction: column;
+}
+
+#left div {
+    background: green;
+}
+
+#right div, #bottom div {
+    background: blue;
+}
+
+#bottom {
+    width: 100%;
+}
+
+div {
+    text-align: center;
+}
+
+/* @media screen and (max-width: 600px) {
+    section {
+        flex-direction: column;
+        align-items: center;
+    }
+} */
