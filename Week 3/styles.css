@@ -1,0 +1,40 @@
+/* CSS Variables */
+:root {
+    --gap: 10px;
+}
+
+/* GLOBAL RESET */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.group {
+    display: flex;
+    gap: var(--gap);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    width: 100%;
+}
+
+main .group:nth-child(2) {
+    align-items: center;
+}
+
+.template {
+    display: none;
+}
+
+.strike {
+    text-decoration: line-through;
+}
