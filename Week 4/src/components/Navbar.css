@@ -1,0 +1,8 @@
+li {
+    display: block;
+}
+
+li:hover {
+    color: maroon;
+    cursor: pointer;
+}
