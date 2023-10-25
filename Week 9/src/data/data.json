@@ -1,0 +1,26 @@
+[
+    {
+        "id": 0,
+        "name": "Salary",
+        "amount": 14360,
+        "type": "deposit"
+    },
+    {
+        "id": 1,
+        "name": "Rent",
+        "amount": 1200,
+        "type": "withdrawal"
+    },
+    {
+        "id": 2,
+        "name": "Groceries",
+        "amount": 181.20,
+        "type": "withdrawal"
+    },
+    {
+        "id": 3,
+        "name": "Scuba Diving",
+        "amount": 800,
+        "type": "withdrawal"
+    }
+]
