@@ -8,6 +8,7 @@ function App() {
   // provide state to store our videos
   const [videos, setVideos] = useState([])
   const [isLoading, setIsLoading] = useState(false)
+  const [isFreeFilter, setIsFreeFilter] = useState(false)
 
 
   // Fetch the data from our video API
@@ -21,6 +22,12 @@ function App() {
     })()
   }, [])
 
+  const handleIsFreeFilter = (event) => {
+    const { checked } = event.target
+
+    setIsFreeFilter(checked)
+  }
+
   return (
     <div style={{
       display: "flex",
@@ -28,8 +35,20 @@ function App() {
       justifyContent: "center",
       flexWrap: "wrap",
     }}>
+      <div>
+        Filter by only free: <input type="checkbox" onChange={handleIsFreeFilter} />
+      </div>
+      <h1>Recommended Videos</h1>
       {
-        videos.map(video => <Video key={video.id} data={video} />)
+        videos.filter(video => !video.isFree).slice(0, 3).map(video => <Video key={video.id} data={video} />)
+      }
+      <hr />
+      {
+        videos
+          .filter(video => isFreeFilter ? video.isFree : true)
+          .filter(video => video.name.toLowerCase().includes("woman"))
+          .sort((a, b) => a.name < b.name)
+          .map(video => <Video key={video.id} data={video} />)
       }
     </div>
   )
