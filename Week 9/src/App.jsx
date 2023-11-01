@@ -5,9 +5,14 @@ import TransactionList from './components/TransactionList'
 import data from "./data/data.json"
 import { Box } from '@mui/material'
 import TransactionAdder from './components/TransactionAdder'
+import BasicModal from './components/BasicModal'
 
 const App = () => {
   const [transactions, setTransactions] = useState(data)
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+  const [modifyId, setModifyId] = useState(null)
   return (
     <Box sx={{
       display: "flex",
@@ -26,9 +31,22 @@ const App = () => {
           }, 0)
         }
         />
-        <TransactionList transactions={transactions} />
+        <TransactionList 
+          setTransactions={setTransactions} 
+          transactions={transactions} 
+          handleOpen={handleOpen}
+          setModifyId={setModifyId}
+        />
       </Box>
       <TransactionAdder setTransactions={setTransactions} />
+      <BasicModal 
+        handleClose={handleClose} 
+        open={open} 
+        transactions={transactions}
+        modifyId={modifyId}
+        setModifyId={setModifyId}
+        setTransactions={setTransactions}
+      />
     </Box>
   )
 }

@@ -3,7 +3,7 @@ import Transaction from "./Transaction"
 import { Box } from "@mui/material"
 
 const TransactionList = (props) => {
-    const { transactions } = props
+    const { transactions, setTransactions, handleOpen, setModifyId } = props
 
     return (
         <Box style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
@@ -14,6 +14,10 @@ const TransactionList = (props) => {
                         name={transaction.name}
                         amount={transaction.amount}
                         type={transaction.type}
+                        id={transaction.id}
+                        setTransactions={setTransactions}
+                        handleOpen={handleOpen}
+                        setModifyId={setModifyId}
                     />
                 )
             })}
