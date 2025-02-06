@@ -2,6 +2,16 @@ import { useEffect, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
+import RenderMethodComponent from "./components/RenderMethodComponent";
+import Parent from "./components/Parent";
+
+const renderMethod = (size) => {
+  return (
+    <p style={{
+      fontSize: size
+    }}>Hello there!</p>
+  )
+}
 
 function App() {
   const [color, setColor] = useState("#ccc");
@@ -38,6 +48,10 @@ function App() {
 
   return (
     <>
+      <Parent>
+        <p style={{ textTransform: "uppercase" }}>I'm a child!</p>
+      </Parent>
+      <RenderMethodComponent render={renderMethod}/>
       <div
         style={{
           width: "100px",
